@@ -1,0 +1,9 @@
+sudo: required
+services:
+    - docker
+
+before_install:
+    - docker build -t deematongo/dcoker-react -f Dockerfile.dev .
+
+script:
+    - docker run deematongo/dcoker-react npm run test -- --coverage
