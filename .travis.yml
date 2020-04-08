@@ -6,4 +6,4 @@ before_install:
     - docker build -t deematongo/dcoker-react -f Dockerfile.dev .
 
 script:
-    - docker run deematongo/dcoker-react npm run test -- --coverage
+    - docker run -e CI=true deematongo/dcoker-react npm run test -- --coverage
